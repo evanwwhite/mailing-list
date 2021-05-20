@@ -9,47 +9,59 @@
 			Scanner input = new Scanner(new File("mailingList.txt"));
 			
 			String name = " ";
-			int ssNumber= 0;
+			String ssNumber = " ";
 			String department = " ";
 			String address = " ";
 			String cityState = " ";
-			int zipcode = 0;
+			String zipcode = "";
 			double mailingCost = 0.0;
-			
+			String line = " ";
 			 
 	         ArrayList <MailingList> mailList = new ArrayList <MailingList> ();
 	         
 	         while(input.hasNext())
 	         {
-	        	 String line = "";
+	        	 line = input.nextLine();
 	        	 String[] s = line.split("\\s+");
 	        	 
-	        	 name = s[0] + " " + s[1] ;
-	        	 ssNumber =  Integer.parseInt(s[3]);
-	        	 input.hasNextLine();
+	        	 name = s[0] + " " + s[1];
+	        	 ssNumber = s[2];
+	        	 //input.nextLine();
 	        	 
-	        	 department = s[4];
+	        	 department = input.nextLine();
+	        	 
+	        	 address = input.nextLine();
+	        	 
+	        	 //line = input.nextLine();
+	        	 
+	        	 cityState = s[0] + " " + s[1];
+	        	 zipcode = s[2];
 	        	 input.nextLine();
 	        	 
-	        	 address = s[0] ;
-	        	 input.nextLine();
-	        	 
-	        	 cityState = s[1] ;
-	        	 input.nextLine();
-	        	 
-	        	 zipcode = Integer.parseInt(s[3]);
-	        	 input.nextLine();
-	        	 
-	        	 mailingCost = Double.parseDouble(s[2]);
 	        	 input.nextLine();
 	        	 
 	        	 mailList.add(new MailingList());
-	        	 line = input.nextLine();
+	        	
+	        	 if(zipcode.charAt(0) == '6')
+	 	        	 mailingCost = 4.80; 
+	 	         
+	 	         else if(zipcode.charAt(0) == '8')
+	 	        	 mailingCost = 5.15;
+	 	         
+	 	         else if(zipcode.charAt(0) == '9')
+	 	        	 mailingCost = 5.70;
+	 	         
+	 	         else
+	 	        	 mailingCost = 0.0;
+	        	 
+	        	  System.out.println(name);
+		          System.out.println(zipcode);
+	        	  System.out.println(mailingCost);
+	        	  System.out.println(" ");
+	              
 	         }
 	         
-	         
-	         
-	         
+	       
 	}
 
 }
