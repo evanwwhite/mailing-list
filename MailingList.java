@@ -6,11 +6,11 @@ import java.util.Scanner;
   public class MailingList {
 	
 	private String name;
-	private int ssNumber;
+	private String ssNumber;
 	private String department;
 	private String address;
 	private String cityState;
-	private int zipcode;
+	private String zipcode;
 	private double mailingCost;
 	
 	
@@ -20,16 +20,16 @@ import java.util.Scanner;
 				MailingList()			            // Constructor (default)
 				{
 					name = "";
-					ssNumber = 0;
+					ssNumber = "";
 					department = "";
 					address = "";
 					cityState = "";
-					zipcode = 0;
+					zipcode = "";
 					mailingCost = 0.0;
 				}
 				
 				
-				MailingList(String nam, int ssN, String dep, String add, String cit, int zip, double mai)
+				MailingList(String nam, String ssN, String dep, String add, String cit, String zip, double mai)
 				{
 					
 					name = nam;
@@ -48,7 +48,7 @@ import java.util.Scanner;
 					return name;
 				}
 
-				public int getSSNumber()
+				public String getSSNumber()
 				{
 					return ssNumber;
 				}
@@ -68,7 +68,7 @@ import java.util.Scanner;
 					return cityState;
 				}
 
-				public int getZipcode()
+				public String getZipcode()
 				{
 					return zipcode;
 				}
