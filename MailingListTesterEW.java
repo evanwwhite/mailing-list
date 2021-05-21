@@ -16,6 +16,7 @@
 			String zipcode = "";
 			double mailingCost = 0.0;
 			String line = " ";
+			double accum = 0.0;
 			 
 	         ArrayList <MailingList> mailList = new ArrayList <MailingList> ();
 	         
@@ -32,35 +33,40 @@
 	        	 
 	        	 address = input.nextLine();
 	        	 
-	        	 //line = input.nextLine();
-	        	 
+	        	 line = input.nextLine();
+	        	 s = line.split("\\s+");
 	        	 cityState = s[0] + " " + s[1];
+
 	        	 zipcode = s[2];
 	        	 input.nextLine();
 	        	 
-	        	 input.nextLine();
-	        	 
 	        	 mailList.add(new MailingList());
-	        	
+	        	 
 	        	 if(zipcode.charAt(0) == '6')
 	 	        	 mailingCost = 4.80; 
 	 	         
-	 	         else if(zipcode.charAt(0) == '8')
+	 	         if(zipcode.charAt(0) == '8')
 	 	        	 mailingCost = 5.15;
 	 	         
-	 	         else if(zipcode.charAt(0) == '9')
+	 	         if(zipcode.charAt(0) == '9')
 	 	        	 mailingCost = 5.70;
 	 	         
-	 	         else
-	 	        	 mailingCost = 0.0;
+	 	         accum = accum + mailingCost;
 	        	 
 	        	  System.out.println(name);
 		          System.out.println(zipcode);
 	        	  System.out.println(mailingCost);
 	        	  System.out.println(" ");
-	              
+	        
 	         }
 	         
+	         for(int t = 0; t < mailList.size(); t++)
+	         {	 
+	           System.out.println(mailList.get(t).toString());
+	           accum += mailList.get(t).getMailingCost();
+	         }
+	        	 
+	        System.out.println("Accumulator total: " + String.format("%.2f" , accum));	 
 	       
 	}
 
