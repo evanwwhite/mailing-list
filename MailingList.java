@@ -76,5 +76,46 @@ import java.util.Scanner;
 				public double getMailingCost()
 				{
 					return mailingCost;
+                }
+//======================================================
+                public void setName(String n)                // mutator "setter" methods
+				{
+					name = n;
+                }
+
+                public void setSSNumber(String s)                // mutator "setter" methods
+				{
+					ssNumber = s;
+                }
+                
+				public void setDepartment(String d)
+				{
+					department = d;
+                }
+                
+				public void setAddress(String a)
+				{
+					address = a;
+                }
+
+                public void setCityState(String c)                // mutator "setter" methods
+				{
+					cityState = c;
+                }
+                
+				public void setZipcode(String z)
+				{
+					zipcode = z;
+                }
+                
+				public void setMailingCost(double m)
+				{
+					MailingCost = m;
+                }
+                
+				public String toString()
+				{
+					return String.format("%-15s %-20s %8.2f", getName(), 
+							getZipcode(), getMailingCost());
 				}
 }
