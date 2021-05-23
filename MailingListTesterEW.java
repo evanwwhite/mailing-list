@@ -40,7 +40,7 @@
 	        	 zipcode = s[2];
 	        	 input.nextLine();
 	        	 
-	        	 mailList.add(new MailingList());
+	        	 
 	        	 
 	        	 if(zipcode.charAt(0) == '6')
 	 	        	 mailingCost = 4.80; 
@@ -50,14 +50,15 @@
 	 	         
 	 	         if(zipcode.charAt(0) == '9')
 	 	        	 mailingCost = 5.70;
-	 	         
-	 	         accum = accum + mailingCost;
-	        	 
-	        	  System.out.println(name);
+	
+	 	         //accum = accum + mailingCost;
+
+                  mailList.add(new MailingList(name, ssNumber, department, address, cityState, zipcode, mailingCost));
+/*
+                  System.out.println(name);
 		          System.out.println(zipcode);
 	        	  System.out.println(mailingCost);
-	        	  System.out.println(" ");
-	        
+                  System.out.println(" ");*/
 	         }
 	         
 	         for(int t = 0; t < mailList.size(); t++)
