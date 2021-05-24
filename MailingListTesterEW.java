@@ -40,8 +40,6 @@
 	        	 zipcode = s[2];
 	        	 input.nextLine();
 	        	 
-	        	 
-	        	 
 	        	 if(zipcode.charAt(0) == '6')
 	 	        	 mailingCost = 4.80; 
 	 	         
