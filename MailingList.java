@@ -115,7 +115,7 @@ import java.util.Scanner;
                 
 				public String toString()
 				{
-					return String.format("%-15s %-20s %8.2f", getName(), 
+					return String.format("%-15s %-10s %8.2f", getName(), 
 							getZipcode(), getMailingCost());
 				}
 }
